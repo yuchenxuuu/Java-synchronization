@@ -19,11 +19,13 @@ public class ConcreteFactory implements Factory {
 
     @Override
     public Vehicle createNewCar(String name, Direction direction){
-    		throw new UnsupportedOperationException("Not supported yet.");
+          return new Car(name, direction);
+    		//throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public Vehicle createNewSled(String name, Direction direction){
-    		throw new UnsupportedOperationException("Not supported yet.");
+        return new Sled(name, direction);
+    		//throw new UnsupportedOperationException("Not supported yet.");
     }
 }
