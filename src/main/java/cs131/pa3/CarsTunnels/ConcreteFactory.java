@@ -2,6 +2,7 @@ package cs131.pa3.CarsTunnels;
 
 import cs131.pa3.Abstract.Direction;
 import cs131.pa3.Abstract.Factory;
+import cs131.pa3.Abstract.Log.Log;
 import cs131.pa3.Abstract.Tunnel;
 import cs131.pa3.Abstract.Vehicle;
 
@@ -14,7 +15,8 @@ public class ConcreteFactory implements Factory {
 
     @Override
     public Tunnel createNewBasicTunnel(String name){
-    		throw new UnsupportedOperationException("Not supported yet.");
+        return new BasicTunnel(name);
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override

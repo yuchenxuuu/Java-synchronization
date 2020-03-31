@@ -24,7 +24,7 @@ public class BehaviorTest {
         System.out.printf("Running Behavior Tests using %s \n", TestUtilities.factory.getClass().getCanonicalName());
     }
     
-    private static final int NUM_RUNS = 1;
+    private static final int NUM_RUNS = 5;
 
     /**
      * Vehicle RollCall checks the basic functions of a vehicle. Note if the test

@@ -10,8 +10,8 @@ import java.util.List;
 /**
  * 
  * The class for the Basic Tunnel, extending Tunnel.
- * @author cs131a
- *
+ * @author Yuchen Xu
+ * @Date 03/18/2020
  */
 public class BasicTunnel extends Tunnel{
 
@@ -19,11 +19,15 @@ public class BasicTunnel extends Tunnel{
 	 * Creates a new instance of a basic tunnel with the given name
 	 * @param name the name of the basic tunnel
 	 */
-	private int carCount;
-	private int sledCount;
-	private Direction dir;
+	private int carCount;//the count of the car inside the tunnel
+	private int sledCount;//the count of sled inside the tunnel
+	private Direction dir;//the direction of the vehicle
 	private List<Vehicle> vlist;//vlist is used to record what kind of vehicle is in the tunnel
 
+	/**
+	 * the constructor for the basic tunnel
+	 * @param name
+	 */
 	public BasicTunnel(String name) {
 		super(name);
 		carCount = 0;
@@ -31,6 +35,11 @@ public class BasicTunnel extends Tunnel{
 		vlist = new ArrayList<>();
 	}
 
+	/**
+	 *  The method that enabled the vehicle to enter the tunnel considering racing conditions
+	 * @param  vehicle The vehicle that is attempting to enter
+	 * @return if the vehicle can enter the tunnel return true, else return false
+	 */
 	@Override
 	public synchronized boolean tryToEnterInner(Vehicle vehicle) {
 		if(vlist.size() == 3){//if the tunnel is already full
@@ -62,6 +71,10 @@ public class BasicTunnel extends Tunnel{
 		return false;
 	}
 
+	/**
+	 * The method that enabled the vehicle to exit the tunnel considering racing conditions
+	 * @param vehicle The vehicle that is exiting the tunnel
+	 */
 	@Override
 	public synchronized void exitTunnelInner(Vehicle vehicle) {
 		if(vehicle instanceof Car){

@@ -27,7 +27,7 @@ public class SimulationTest {
     private static final int wave2Sleds= 50;
     private static final int wave3Cars = 50;    
     
-    private static final int NUM_RUNS = 1;
+    private static final int NUM_RUNS = 5;
     
     @BeforeEach
     public void setUp() {
